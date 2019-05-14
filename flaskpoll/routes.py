@@ -33,11 +33,15 @@ def about():
     return render_template('about.html', title='About')
 
 @app.route("/admin")
+@login_required
 def admin():
-    movies = MoviePoll.query.all()
-    musics = MusicPoll.query.all()
-    games = GamePoll.query.all()
-    return render_template('admin.html', movies=movies, musics = musics, games = games)
+    if(not User.is_admin()):
+        return redirect('home')
+
+    movies = Poll.query.all()
+    users = User.query.all()
+
+    return render_template('admin.html', movies=movies, users = users,title='Admin')
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
