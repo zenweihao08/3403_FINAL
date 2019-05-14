@@ -13,10 +13,11 @@ from datetime import datetime
 @app.route("/")
 @app.route("/home")
 def home():
-    movies = MoviePoll.query.all()
-    musics = MusicPoll.query.all()
-    games = GamePoll.query.all()
-    return render_template('home.html', movies=movies, musics = musics, games = games)
+    movies = Poll.query.all()
+    [i.calculation_url_and_other() for i in movies]
+
+    movies.sort(key=lambda movie: movie.rank,reverse=True);
+    return render_template('home.html', movies=movies, title='Home',)
 
 @app.route("/movies")
 def movies():
