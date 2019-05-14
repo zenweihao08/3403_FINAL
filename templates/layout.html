@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{{ title}}</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://code.z01.com/v4/dist/css/bootstrap.min.css" >
+    <style>
+        /* Sticky footer styles----------------------- */
+        html { position: relative; min-height: 100%; }
+        body {margin-bottom: 60px; background-color: #f8f9fa}        /* Margin bottom by footer height */
+
+        .footer {
+            position: absolute; bottom: 0; width: 100%; /* Set the fixed height of the footer here */
+            height: 60px; line-height: 60px; /* Vertically center the text there */
+            {#background-color: #343a40!important;#}
+        }
+        /* Custom page CSS--------------------------- */
+        /* Not required for template or sticky footer method. */
+        body > .container { padding: 60px 15px 0; }
+        .footer > .container { padding-right: 15px; padding-left: 15px; }
+        code { font-size: 80%; }
+    </style>
+</head>
+<body>
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"> <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url_for('chart') }}">Chart </a> </li>
+                {% if current_user.is_authenticated %}
+                 <li class="nav-item"><a class=" nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                 <li class="nav-item"><a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a></li>
+                 <li class="nav-item"><a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
+
+                <li class="nav-item"> <a class="nav-link" href="{{ url_for('about') }}">About </a> </li>
+            </ul>
+
+        </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="container " >
+    <div class="row">
+        <div class="col-md-8">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+
+</main>
+<footer class="footer bg-dark">
+    <div class="container"> <span class="text-muted time"></span> </div>
+</footer>
+
+<!-- Bootstrap 核心 JavaScript -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.z01.com/v4/dist/js/popper.min.js"></script>
+<script src="https://code.z01.com/v4/dist/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="{{url_for('static', filename='foot.js')}}"></script>
+
+</body>
+</html>
