@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% if movies %}
+        <link rel="stylesheet" href="{{ url_for('static',filename='home.css') }}" >
+
+        <div class="row">
+            {% for movie in movies %}
+
+                <div class="col-sm-4">
+
+                    <div class="card bg-white  border-0" >
+                        <img class="card-img-top" src="{{url_for('static', filename='Titanic.png')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ movie.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{movie.release_date }}</h6>
+                            <p class="card-text">{{ movie.introduction }}</p>
+                            <a href="{{movie.url}}" class="btn btn-dark {{ movie.icon }}" >{{movie.btn_text}}</a>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+{% endblock content %}
