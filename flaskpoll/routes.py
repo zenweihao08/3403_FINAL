@@ -21,21 +21,12 @@ def home():
 
 @app.route("/movies")
 def movies():
-    movies = MoviePoll.query.all()
-    return render_template('movies.html', movies = movies)
+    movies = Poll.query.all()
+    # if(request.accept_mimetypes.accept_html):
+    #     return render_template('/movies,',movies=movies)
 
-
-@app.route("/musics")
-def musics():
-    musics = MusicPoll.query.all()
-    return render_template('musics.html', musics = musics)
-
-
-@app.route("/games")
-def games():
-    games = GamePoll.query.all()
-    return render_template('games.html', games = games)
-
+    date=[{'title':movie.title,'rank':movie.rank} for movie in movies]
+    return Response(json.dumps(date), mimetype='application/json')
 
 @app.route("/about")
 def about():
