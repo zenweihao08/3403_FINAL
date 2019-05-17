@@ -32,6 +32,10 @@ def movies():
 def about():
     return render_template('about.html', title='About')
 
+@app.route('/chart')
+def chart():
+    return render_template('chart.html',title='Chart')
+
 @app.route("/admin")
 @login_required
 def admin():
@@ -115,94 +119,118 @@ def account():
                            image_file=image_file, form=form)
 
 
-@app.route("/movie/new", methods=['GET', 'POST'])
+@app.route("/add_poll", methods=['GET', 'POST'])
 @login_required
-def add_movie():
-    form = MoviePollForm()
-    if form.validate_on_submit():
-        new_movie = MoviePoll(
-            movie_title=form.movie_title.data, 
-            movie_release_date = form.movie_release_date.data,
-            movie_director= form.movie_director.data,
-            movie_rank = 0)
+def add_poll():
+    if request.method=="POST":
+        form =request.form
+        new_movie = Poll(
+            title=form['title'] ,
+            release_date = datetime.strptime(form['date'] ,'%Y-%m-%d').date(),
+            introduction= form['introduction'],
+            rank = 0,
+            image_url=form['image_url'],
+            initiator=current_user.id)
+
         db.session.add(new_movie)
         db.session.commit()
         flash('Your movie is now add to the poll!', 'success')
-        return redirect(url_for('movies'))
-    return render_template('add_movie.html', title='New Movie',
-                           form=form, legend='New Movie')
+        return redirect(url_for('admin'))
+    return render_template('add_poll.html',title='Add Poll')
 
-@app.route("/music/new", methods=['GET', 'POST'])
+@app.route("/poll", methods=['GET', 'POST'])
 @login_required
-def add_music():
-    form = MusicPollForm()
-    if form.validate_on_submit():
-        new_music = MusicPoll(
-            music_title=form.music_title.data,
-            music_debut_date = form.music_debut_date.data,
-            singer=form.singer.data,
-            music_rank=0)
-        db.session.add(new_music)
-        db.session.commit()
-        flash('Your music is now add to the poll!', 'success')
-        return redirect(url_for('musics'))
-    return render_template('add_music.html', title='New Music',
-                           form=form, legend='New Music')
+def poll():
 
-@app.route("/game/new", methods=['GET', 'POST'])
+    user=User.query.filter_by(id=current_user.id).first()
+
+    if user.voted:
+        return redirect('/home')
+
+    movie_id = request.args['movie_id']
+    user.cast_to=movie_id
+    user.voted=True
+    movie=Poll.query.filter_by(id = movie_id).first()
+    movie.rank+=1
+
+
+    db.session.commit()
+
+    return redirect(url_for('home'))
+
+@app.route("/unpoll", methods=['GET', 'POST'])
 @login_required
-def add_game():
-    form = GamePollForm()
-    if form.validate_on_submit():
-        new_game = GamePoll(
-            game_title=form.game_title.data,
-            game_release_date=form.game_release_date.data, 
-            production_company = form.production_company.data)
-        db.session.add(new_game)
-        db.session.commit()
-        flash('Your game is now add to the poll!', 'success')
-        return redirect(url_for('games'))
-    return render_template('add_game.html', title='New Game',
-                           form=form, legend='New Game')
+def unpoll():
 
-@app.route("/movie/del", methods=['GET','POST'])
+    movie_id = request.args['movie_id']
+
+    movie=Poll.query.filter_by(id = movie_id).first()
+    movie.rank-=1
+
+    user=User.query.filter_by(id=current_user.id).first()
+    user.cast_to=None
+    user.voted=False
+    db.session.commit()
+
+    return redirect(url_for('home'))
+
+@app.route("/reset_vote", methods=['GET', 'POST'])
+@login_required
+def reset_vote():
+
+    user=User.query.filter_by(id=request.args['id']).first()
+    movie=Poll.query.filter_by(id = user.cast_to).first()
+    if movie:
+
+        movie.rank-=1
+        user.cast_to=None
+        user.voted=False
+
+        db.session.commit()
+
+        flash('reset success')
+
+    return redirect(url_for('admin'))
+
+@app.route("/del/movie", methods=['GET','POST'])
 @login_required
 def del_movie():
-    if request.method=='POST':
-        movie_id = request.get_json()['id']
-        if movie_id:
-            del_mov=MoviePoll.query.filter_by(id = movie_id).first()
-            db.session.delete(del_mov)
-            db.session.commit()
-            flash('The movie is now deleted', 'success')
-            return redirect(url_for('admin'))
-    return render_template('delete_movie.html', title='Delete Movie', legend='Delete Movie')
 
-@app.route("/music/del", methods=['GET', 'POST'])
-@login_required
-def del_music():
-    form = MusicPollForm()
-    if form.validate_on_submit():
-        del_music = MusicPoll.query.filter_by('music_title=form.music_title.data')
-        db.session.delete(del_music)
-        db.session.commit()
-        flash('The music is now deleted', 'success')
-        return redirect(url_for('admin'))
-    return render_template('delete_music.html', title='Delete Music',
-                           form=form, legend='Delete Music')
+    movie_id = request.args['id']
+    if movie_id and User.is_admin():
+        for user in User.query.filter_by(cast_to=movie_id).all():
+            user.voted=False
+            user.cast_to=None
 
-@app.route("/game/del", methods=['GET', 'POST'])
-@login_required
-def del_game():
-    form = GamePollForm()
-    if form.validate_on_submit():
-        del_game = GamePoll.query.filter_by('game_title=form.game_title.data')
-        db.session.delete(del_game)
+        del_mov=Poll.query.filter_by(id = movie_id).first()
+        db.session.delete(del_mov)
         db.session.commit()
-        flash('The game is now deleted', 'success')
+        flash('The movie is now deleted', 'success')
         return redirect(url_for('admin'))
-    return render_template('delete_game.html', title='Delete Movie',
-                           form=form, legend='Delete Movie')
+
+    return redirect('/home')
+
+
+@app.route("/del/user")
+@login_required
+def del_user():
+    id=request.args['id']
+    if(id and User.is_admin()):
+
+        user = User.query.filter_by(id=id).first()
+        if user.voted:
+            movie=Poll.query.filter_by(id = user.cast_to).first()
+            movie.movie_rank-=1;
+
+        db.session.delete(user)
+        db.session.commit()
+        flash('The user is now deleted', 'success')
+
+        return redirect('/admin')
+
+    return Response(json.dumps(False),mimetype='application/json')
+
+
 
 
 
