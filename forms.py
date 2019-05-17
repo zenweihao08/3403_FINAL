@@ -66,11 +66,7 @@ class MusicPollForm(FlaskForm):
     singer = StringField('Singer', validators=[DataRequired()])
     submit = SubmitField('Post')
 
-class GamePollForm(FlaskForm):
-    game_title = StringField('Title',validators=[DataRequired()])
-    game_release_date = DateField('Relase Date',format='%d/%m/%Y', validators=[DataRequired()])
-    production_company = StringField('Production Company',validators=[DataRequired()])
-    submit = SubmitField('Post')
+
 
 
 
