@@ -35,15 +35,21 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"> <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a> </li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url_for('chart') }}">Chart </a> </li>
-                {% if current_user.is_authenticated %}
-                 <li class="nav-item"><a class=" nav-link" href="{{ url_for('logout') }}">Logout</a></li>
-                {% else %}
+
+                {% if not current_user.is_authenticated %}
                  <li class="nav-item"><a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a></li>
                  <li class="nav-item"><a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a></li>
                 {% endif %}
 
                 <li class="nav-item"> <a class="nav-link" href="{{ url_for('about') }}">About </a> </li>
             </ul>
+                {% if current_user.is_authenticated %}
+                <ul class="navbar-nav mr-auto">
+                    <a class=" nav-link nav-item" href="{{ url_for('logout') }}">Logout</a>
+                </ul>
+                {% endif %}
 
         </div>
         </div>

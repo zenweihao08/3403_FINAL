@@ -40,6 +40,7 @@ class Poll(db.Model):
     title = db.Column(db.String(100), nullable=False)
     release_date = db.Column(db.Date, nullable=False)
     introduction = db.Column(db.String(1000), nullable=False)
+    image_url = db.Column(db.String(1000), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     rank = db.Column(db.Integer)
     initiator=db.Column(db.Integer,nullable=False)
