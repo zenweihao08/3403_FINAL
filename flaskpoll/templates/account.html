@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
+
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}" >
+
     <div class="content-section">
       <div class="media">
         <img class="rounded-circle account-img" src="{{ image_file }}">

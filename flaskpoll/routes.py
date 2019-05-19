@@ -23,7 +23,7 @@ def movies():
     # if(request.accept_mimetypes.accept_html):
     #     return render_template('/movies,',movies=movies)
 
-    date=[{'title':movie.title,'rank':movie.rank} for movie in movies]
+    date=[{'title':movie.title,'rank':movie.rank,'image_url':movie.image_url} for movie in movies]
     return Response(json.dumps(date), mimetype='application/json')
 
 @app.route('/chart')
@@ -128,6 +128,7 @@ def add_poll():
             release_date = datetime.strptime(form['date'] ,'%Y-%m-%d').date(),
             introduction= form['introduction'],
             rank = 0,
+            image_url=form['image_url'],
             initiator=current_user.id)
 
         db.session.add(new_movie)

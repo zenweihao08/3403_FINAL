@@ -15,7 +15,8 @@ am4core.ready(function() {
             // if (m.rank > 0) {
                 data.push({
                     name: m.title,
-                    steps:m.rank
+                    steps:m.rank+5,
+                    image_url:m.image_url
                 });
             // }
         }
@@ -30,6 +31,7 @@ am4core.ready(function() {
         categoryAxis.renderer.tooltip.dy = 35;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
         valueAxis.renderer.inside = true;
         valueAxis.renderer.labels.template.fillOpacity = 0.3;
         valueAxis.renderer.grid.template.strokeOpacity = 0;
@@ -40,6 +42,7 @@ am4core.ready(function() {
         var series = chart.series.push(new am4charts.ColumnSeries);
         series.dataFields.valueY = "steps";
         series.dataFields.categoryX = "name";
+        series.dataFields.image_url= "image_url";
         series.tooltipText = "{valueY.value}";
         series.tooltip.pointerOrientation = "vertical";
         series.tooltip.dy = - 6;
@@ -85,7 +88,8 @@ am4core.ready(function() {
         image.adapter.add("href", function (href, target) {
             var dataItem = target.dataItem;
             if (dataItem) {
-                return "static/t.jpg";
+                console.log(dataItem.image_url)
+                return dataItem.image_url;
             }
         })
 
