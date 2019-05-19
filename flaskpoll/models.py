@@ -59,3 +59,4 @@ class Poll(db.Model):
             self.btn_text='Vote For It'
 
 db.create_all()
+
