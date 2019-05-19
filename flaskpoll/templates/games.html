@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+  {% for game in games %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">{{ game.game_title }}</a>
+          <small class="text-muted">{{ game.date_posted }}</small>
+        </div>
+        <p class="article-content">{{ game.production_company }}</p>
+      </div>
+    </article>
+  {% endfor %}
+{% endblock content %}

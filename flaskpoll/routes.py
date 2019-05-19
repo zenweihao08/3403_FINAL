@@ -3,12 +3,10 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, json, Response
 from flaskpoll import app, db, bcrypt
-from flaskpoll.forms import RegistrationForm, LoginForm, UpdateAccountForm, MoviePollForm
+from flaskpoll.forms import RegistrationForm, LoginForm, UpdateAccountForm, MoviePollForm, MusicPollForm, GamePollForm
 from flaskpoll.models import User, Poll
 from flask_login import login_user, current_user, logout_user, login_required
 from datetime import datetime
-
-
 
 @app.route("/")
 @app.route("/home")
@@ -19,7 +17,7 @@ def home():
     movies.sort(key=lambda movie: movie.rank,reverse=True);
     return render_template('home.html', movies=movies, title='Home',)
 
-@app.route("/movies")
+@app.route('/movies')
 def movies():
     movies = Poll.query.all()
     # if(request.accept_mimetypes.accept_html):
@@ -28,13 +26,14 @@ def movies():
     date=[{'title':movie.title,'rank':movie.rank} for movie in movies]
     return Response(json.dumps(date), mimetype='application/json')
 
-@app.route("/about")
-def about():
-    return render_template('about.html', title='About')
-
 @app.route('/chart')
 def chart():
     return render_template('chart.html',title='Chart')
+
+
+@app.route("/about")
+def about():
+    return render_template('about.html', title='About')
 
 @app.route("/admin")
 @login_required
@@ -129,7 +128,6 @@ def add_poll():
             release_date = datetime.strptime(form['date'] ,'%Y-%m-%d').date(),
             introduction= form['introduction'],
             rank = 0,
-            image_url=form['image_url'],
             initiator=current_user.id)
 
         db.session.add(new_movie)
@@ -229,7 +227,6 @@ def del_user():
         return redirect('/admin')
 
     return Response(json.dumps(False),mimetype='application/json')
-
 
 
 

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+  {% for movie in movies %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">{{ movie.movie_title }}</a>
+          <small class="text-muted">{{ movie.date_posted }}</small>
+        </div>
+        <p class="article-content">{{ movie.movie_director }}</p>
+        <p class="article-content">{{ movie.movie_director }}</p>
+        <p class="article-content">{{ movie.movie_release_date.strftime('%B/ %d/ %Y')}}</p>
+      </div>
+    </article>
+  {% endfor %}
+{% endblock content %}
