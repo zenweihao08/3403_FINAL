@@ -3,7 +3,7 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, json, Response
 from flaskpoll import app, db, bcrypt
-from flaskpoll.forms import RegistrationForm, LoginForm, UpdateAccountForm, MoviePollForm, MusicPollForm, GamePollForm
+from flaskpoll.forms import RegistrationForm, LoginForm, UpdateAccountForm, MoviePollForm
 from flaskpoll.models import User, Poll
 from flask_login import login_user, current_user, logout_user, login_required
 from datetime import datetime
