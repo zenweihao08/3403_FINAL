@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="DELETE" action="Movie">
+      <div class="form-group">
+        <label class="sr-only" for="nameInput">Movie ID</label>
+        <input type="text" class="form-control" id="id" name="movie_id" />
+      </div>
+      <button type="submit" id="movie_id_submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+{% endblock content %}

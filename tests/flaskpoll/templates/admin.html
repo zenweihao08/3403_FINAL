@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+      
+	    <table id="table_id" class="table">
+	    	<thead>
+	    		<tr>
+                    <th>Movie ID</th>
+                    <th>Movie Title</th>
+                    <th>Release Date</th>
+                    <th>Director</th>
+                    <th>Del Poll</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for movie in movies %}
+				<tr>
+					<th>{{movie.id}}</th>
+					<th>{{movie.title}}</th>
+				   	<th>{{movie.release_date}}</th>
+				    <th>{{movie.director}}</th>
+                    <th><a href="/del/movie?id={{ movie.id }}">del</a></th>
+
+                </tr>
+				{% endfor %}
+			</tbody>
+			<thead>
+	    		<tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>Reset Vote</th>
+                    <th>Del user</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for user in users %}
+				<tr>
+					<th>{{user.id}}</th>
+					<th>{{user.username}}</th>
+				   	<th>{{user.email}}</th>
+                    <th><a href="/reset_vote?id={{ user.id }}">Reset vote</a></th>
+                    <th><a href="/del/user?id={{ user.id }}">del</a></th>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+        <a  href="{{ url_for('add_poll') }}">
+            <div class="dropdown">
+              <button class="btn btn-dark " type="button"  >
+                  Add New Poll
+              </button>
+
+            </div>
+        </a>
+
+    </main>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="card bg-white  border-0 col-sm-9" >
+        <img class="card-img-top" src="{{url_for('static', filename='vote.jpg')}}" alt="Card image cap">
+        <div class="card-body">
+            <h2 class="card-title">Vote your key vote,Choose the most popular movie!</h2>
+            <h4 class="card-text">1.First past the post voting!</h4>
+            <h4 class="card-text">2.One person one vote!</h4>
+        </div>
+    </div>
+{% endblock content %}
