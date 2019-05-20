@@ -63,6 +63,8 @@ Install python3, flask, sqlalchemy, bcrypt, Pillow, flask-wtf
 
 ## Running the tests
 
+To run unit tests
+`python3 unit_test.py`
 
 ## Deployment
 
