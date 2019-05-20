@@ -1,0 +1,1 @@
+from flaskpoll import app
