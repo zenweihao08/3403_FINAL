@@ -1,0 +1,336 @@
+commit 31aa6f7d76262ef6cc537d20d78f05075630dc7f
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Mon May 20 17:36:34 2019 +0800
+
+    testunits
+
+commit d462f88d2c31fa0bc493ad7561720a6b2a64459d
+Merge: a003f42 81f8167
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Mon May 20 17:30:24 2019 +0800
+
+    add_db
+
+commit a003f429e1cd90701693fa7fd76af92a865456a0
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Mon May 20 17:28:55 2019 +0800
+
+    add_data
+
+commit 81f8167e932ed354802d22fab9c0d416f2ee1c5c
+Author: zenweihao08 <48747476+zenweihao08@users.noreply.github.com>
+Date:   Mon May 20 17:25:57 2019 +0800
+
+    Create README.md
+
+commit 7bd5ada95eac5b2942d74c9b77ff2a8575d12399
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Mon May 20 15:31:26 2019 +0800
+
+    add_db
+
+commit 7ecfa5973fd9fee43e8fb1e91deddc11b661b758
+Author: BarryWang <barrywang@Zengs-Air.gateway>
+Date:   Sun May 19 19:29:29 2019 +0800
+
+    navbar_to_right_side
+
+commit d4eaf5cad5da63f97dab8da7f3a26a6d447a4f5e
+Author: BarryWang <barrywang@Zengs-Air.gateway>
+Date:   Sun May 19 17:17:42 2019 +0800
+
+    Fix
+
+commit 65504167320bb8629242d97fd75b680c627a2c61
+Author: BarryWang <barrywang@Zengs-Air.gateway>
+Date:   Sun May 19 17:12:50 2019 +0800
+
+    Fixing_fatal_error
+
+commit 74a825c5b8946ddf69002f7408a589c4b2e83d8b
+Author: BarryWang <barrywang@Zengs-Air.gateway>
+Date:   Sun May 19 17:05:06 2019 +0800
+
+    fix
+
+commit 9208d1a728d2a1c62618d2bdc4128c877293f46a
+Author: Zeng Weihao <zzlo@Zengs-Air.gateway>
+Date:   Sun May 19 13:05:09 2019 +0800
+
+    flaskpoll/static/main.css
+
+commit d9fb57fdc7ba084bc7118124408560f38dcd3382
+Author: Zeng Weihao <zzlo@Zengs-Air.gateway>
+Date:   Sun May 19 12:56:36 2019 +0800
+
+    Node_modules
+
+commit 2ba460af54490392b764e173a0a9c57ad66bed89
+Author: A Allthat <aallthat@AdeMacBook-Pro.local>
+Date:   Sun May 19 11:47:12 2019 +0800
+
+    flaskpoll/templates/admin.html
+
+commit d0882c0bbd7cde95aa70d560ef82e8a58092b84c
+Author: A Allthat <aallthat@AdeMacBook-Pro.local>
+Date:   Sun May 19 11:40:52 2019 +0800
+
+    flaskpoll/routes.py
+
+commit 4a06c8790d8fbc61ddd4694eaec0219575184c74
+Author: A Allthat <aallthat@AdeMacBook-Pro.local>
+Date:   Sun May 19 11:32:47 2019 +0800
+
+    flaskpoll/forms.py
+
+commit 8f169311f2f61828b00f476540e5f94ba7005dc6
+Author: A Allthat <aallthat@AdeMacBook-Pro.local>
+Date:   Sun May 19 11:29:24 2019 +0800
+
+    admin.json
+
+commit b86a08e3e77229ba3a9100ea9a56e597bbee5a23
+Author: A Allthat <aallthat@AdeMacBook-Pro.local>
+Date:   Sun May 19 11:24:20 2019 +0800
+
+    flaskpoll/static/t.jpg
+
+commit c6b851125f08be3f0abc7f08fe052c90b68437f3
+Author: A Allthat <aallthat@AdeMacBook-Pro.local>
+Date:   Sun May 19 11:19:47 2019 +0800
+
+    flaskpoll/static/profile_pics/t.jpg
+
+commit 8b6531327c8262f75ec4e6dbe24fbc4ad251d17e
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 23:46:29 2019 +0800
+
+    Add files via upload
+
+commit aa2d385965d9eb7033cc9768b0e9034c52c262a3
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 23:22:15 2019 +0800
+
+    Add files via upload
+
+commit 09d9494ac2b29708d10540cdaef22f5c197b8560
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 22:47:27 2019 +0800
+
+    Add files via upload
+
+commit d500bac4149c3b89441a0b637028b7dc23664401
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 22:45:43 2019 +0800
+
+    Delete vote.jpg
+
+commit a31c4bf8a475d9ccb27b14252862479d47596c83
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 22:45:34 2019 +0800
+
+    Delete default.jpg
+
+commit c152fd6d3830c12e4054ee499a220bf0c929268c
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 22:45:19 2019 +0800
+
+    Delete Titanic.png
+
+commit c6e73d6458ebce82f7a1ce5d501fc6fdc9d58869
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 22:11:33 2019 +0800
+
+    Add files via upload
+
+commit eccef8d17d875b50944ea8644ae57bf73d2f461e
+Merge: 407cc9c 35c0af7
+Author: Zeng Weihao <zzlo@Zengs-Air.gateway>
+Date:   Sat May 18 21:25:27 2019 +0800
+
+    Merge branch 'master' of https://github.com/zenweihao08/3403_FINAL
+
+commit 35c0af7807ca0b4113e55b7afacbbc7ff04e5ef4
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 21:23:22 2019 +0800
+
+    Delete Titanic.png
+
+commit ec946901a24e60586557ced9ff2234d290cac52c
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 21:23:13 2019 +0800
+
+    Delete vote.jpg
+
+commit 407cc9cd19dc3b327bfbaccbb0c6127483545e01
+Author: Zeng Weihao <zzlo@Zengs-Air.gateway>
+Date:   Sat May 18 21:21:25 2019 +0800
+
+    flaskpoll/static/
+
+commit 5d22bb40a99f288e6b6e4c96011918f21e9d27ea
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Sat May 18 21:12:30 2019 +0800
+
+    Add files via upload
+
+commit f4361558b1e337f5bb06984d49be5f82910194fa
+Merge: db1ff34 f3fdc86
+Author: Zeng Weihao <zzlo@Zengs-Air.gateway>
+Date:   Sat May 18 18:44:34 2019 +0800
+
+    resolve conflict
+
+commit f3fdc86182f49f92916a49dca949e53710cd5e9c
+Author: zenweihao08 <48747476+zenweihao08@users.noreply.github.com>
+Date:   Sat May 18 18:08:39 2019 +0800
+
+    Delete add_movie.html
+
+commit db1ff34ef6ff05b980773266190f39add6ca58f2
+Author: Zeng Weihao <zzlo@Zengs-Air.gateway>
+Date:   Sat May 18 18:06:48 2019 +0800
+
+    flaskpoll/templates/add_poll.html
+
+commit de85911cab3b73efcbbfc789331e222157184d99
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Fri May 17 23:30:14 2019 +0800
+
+    Add files via upload
+
+commit 71beecfb9dae7bfd9ddb58596678c12272694dd1
+Author: Zeng Weihao <zzlo@Zengs-Air.gateway>
+Date:   Fri May 17 23:17:03 2019 +0800
+
+    flaskpoll/routes.py
+
+commit 6da4c7b4f2bbe91afc9e17752ce38fead0b7dd12
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Fri May 17 12:40:41 2019 +0800
+
+    forms.py
+
+commit 334e515a974e8cec42b51b46b0dde06bcee8d06b
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Fri May 17 12:37:37 2019 +0800
+
+    forms.py
+
+commit d7fcc6bbd46edf3d5d152920932c972d046e418c
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Fri May 17 12:26:01 2019 +0800
+
+    flaskpoll/templates/add_movie.html
+
+commit 6886639fe508c34994f1a953d4ba8c06e1df9822
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Fri May 17 12:24:58 2019 +0800
+
+    flaskpoll/templates/layout.html
+
+commit 9e5f92f5adc8ae49f1a3bfbc5674269b95c57d02
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Fri May 17 11:34:46 2019 +0800
+
+    forms.py
+
+commit d2bbb3c55519063dde6cd06a5386cc0543d7319e
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Fri May 17 11:30:28 2019 +0800
+
+    flaskpoll/forms.py
+
+commit 0072ab5dfe3646ae4489c52accb5e5748716abde
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Fri May 17 11:28:25 2019 +0800
+
+    forms.py
+
+commit 87eca66947dbcb9c937371cddc59c16cbe2f4154
+Author: Allthat9999 <50614552+Allthat9999@users.noreply.github.com>
+Date:   Thu May 16 23:06:25 2019 +0800
+
+    Add files via upload
+
+commit e1024055d10ecf0f17bbaecfb3be14a092a45680
+Author: BarryWang <barrywang@Zengs-MacBook-Air.local>
+Date:   Wed May 15 11:19:21 2019 +0800
+
+    run.py
+
+commit 8d0fb8e0e77888cdb3e95cddd63cd3aecbfbf980
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 12:44:57 2019 +0800
+
+    flaskpoll/routes.py
+
+commit dee3f8dc2f51e857caa8da4e8785a4759d6b2fc4
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 12:35:07 2019 +0800
+
+    flaskpoll/routes.py
+
+commit 2471ad8a8c7bd11c941657143a663eb52307d7ae
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 12:30:31 2019 +0800
+
+    flaskpoll/routes.py
+
+commit 9f5f5bba11c6bb7a72e696812052f069e77d51ee
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 12:24:32 2019 +0800
+
+    flaskpoll/models.py
+
+commit c724cc9db4aec0030ae64f083bcb88c91d7d9533
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 12:00:09 2019 +0800
+
+    __init__.py
+
+commit 95f4b7cf8954fac5611e28d60a03e17046ac886c
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 11:47:50 2019 +0800
+
+    templates/account.html
+
+commit 81b497059a33dfb44a49132d073d33e3b85cd7ed
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 11:42:40 2019 +0800
+
+    templates/login.html
+
+commit c9141186bbdd342323bcdfcc4b5622bd39a70ce1
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 11:15:49 2019 +0800
+
+    templates/register.html
+
+commit f897935d7993b44e2668567b15305e083a70d7bf
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 11:11:04 2019 +0800
+
+    templates/about.html
+
+commit 7215ab08c867e0accb846893f30cdbc3e707a863
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 11:08:08 2019 +0800
+
+            templates/about.html
+    
+    lauout template
+
+commit 0ad38d5a48fd0ef810ef6df1eea39ba99893f60b
+Author: Zeng Weihao <zzlo@Zengs-MacBook-Air.local>
+Date:   Tue May 14 10:58:02 2019 +0800
+
+    :#
+    
+    login html
+
+commit cc62f87477e8bd1b9316888c268490cc6ca859bc
+Author: zenweihao08 <48747476+zenweihao08@users.noreply.github.com>
+Date:   Tue May 14 10:50:32 2019 +0800
+
+    Initial commit
